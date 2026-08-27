@@ -44,7 +44,7 @@ A IA analisará os dados de consumo fornecidos pelo usuário, buscando identific
 
 ### Integrantes
 
--1 Luiz Paulo Fernandes 
+- 1 Luiz Paulo Fernandes 
 - 2 Guilherme Alexandre Batista  
 - 3 Pamela Almeida dos Santos 
 - 4 Cauã Silva Rocha
