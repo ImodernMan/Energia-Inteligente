@@ -51,3 +51,4 @@ A IA analisará os dados de consumo fornecidos pelo usuário, buscando identific
 - 5 Jhonatas Felipe Lopes Ribeiro
 - 6 Diego silva da costa
 - 7 Matheus Henrique Alves Soares
+- 8 Pedro Henrique dos Santos de Carvalho
