@@ -4,30 +4,36 @@
 
 ### Sobre o projeto
 
-Nosso projeto tem como objetivo desenvolver um aplicativo mobile híbrido voltado para eficiência energética residencial e micro-empresarial, contribuindo para o ODS 7 — Energia Limpa e Acessível.
+Nosso projeto tem como objetivo desenvolver um aplicativo mobile híbrido voltado para a análise da viabilidade de implantação de fontes alternativas de energia em residências e microempresas, contribuindo para o ODS 7 — Energia Limpa e Acessível.
 
 ### Problema
 
-Muitas micro-empresas e residências não possuem uma ferramenta ou meio de analisar uma implementação de uma nova fonte de energia eficiente e que não seja agressiva ao meio ambiente.
+Muitas residências e microempresas não possuem uma ferramenta acessível que permita analisar a viabilidade da implantação de uma fonte alternativa de geração de energia, considerando fatores como consumo, localização, área disponível, investimento e expectativas de economia.
 
 ### Público-alvo
 
-Usuários residenciais que desejam simular a viabilidade da implantação de um meio de geração de energia alternativo.
+Usuários residenciais e microempresariais que desejam simular e analisar a viabilidade da implantação de uma fonte alternativa de geração de energia.
 
 ### Solução proposta
 
-O sistema será um aplicativo mobile híbrido que permitirá ao usuário registrar suas informações e expectativas a respeito da implantação de uma fonte de energia alternativa e consciente, que serão utilizados para gerar uma analise personalizada com base nos dados, por uma IA padronizada para a entrega de informações e resultados precisos, como investimento, viabilidade e economia.
-n
+O sistema será um aplicativo mobile híbrido que permitirá ao usuário informar dados e expectativas relacionadas à implantação de uma fonte alternativa de energia. Essas informações serão utilizadas pelo sistema para realizar uma análise personalizada, com o auxílio de Inteligência Artificial, considerando os dados fornecidos pelo usuário e informações externas relevantes.
 
-###INTELIGENCIA ARTIFICIAL
+A solução terá como objetivo apresentar uma análise de viabilidade, estimativas e recomendações personalizadas para cada cenário.
 
-A IA entra como ponto central do nosso sistema, já que ela não só caucula com base nos dados dp usuario, mas gera uma recomendção e justificativa personalizada para cada caso, levando em consideração a região, investimento, estimativa do cliente e dados de outras empresas que seguiram o mesmo caminho.
+### Inteligência Artificial
+
+A Inteligência Artificial será um dos componentes centrais do sistema. A partir dos dados fornecidos pelo usuário e de informações complementares obtidas pelo sistema, a IA realizará uma análise personalizada de cada cenário.
+
+A IA será responsável por interpretar as informações disponíveis, gerar uma classificação de viabilidade, apresentar uma justificativa para a análise e produzir recomendações para o usuário.
+
+A arquitetura também permitirá futuras expansões, como a utilização de novas fontes de dados, diferentes tipos de energia e novos critérios de análise.
 
 ### Funcionalidades do MVP
 
-1. . Consulta de viabilidade de implantação
-2. . Geração de analise personalizada
-3 . Geração de recomendações utilizando IA.
+1. Consulta de viabilidade de implantação;
+2. Análise personalizada do cenário informado;
+3. Geração de recomendações utilizando Inteligência Artificial;
+4. Apresentação da justificativa da análise realizada pela IA.
 
 ### Tecnologias
 
@@ -41,11 +47,11 @@ A IA entra como ponto central do nosso sistema, já que ela não só caucula com
 
 ### Integrantes
 
-- 1 Luiz Paulo Fernandes 
-- 2 Guilherme Alexandre Batista  
-- 3 Pamela Almeida dos Santos 
-- 4 Cauã Silva Rocha
-- 5 Jhonatas Felipe Lopes Ribeiro
-- 6 Diego silva da costa
-- 7 Matheus Henrique Alves Soares
-- 8 Pedro Henrique dos Santos de Carvalho
+1. Luiz Paulo Fernandes
+2. Guilherme Alexandre Batista
+3. Pamela Almeida dos Santos
+4. Cauã Silva Rocha
+5. Jhonatas Felipe Lopes Ribeiro
+6. Diego Silva da Costa
+7. Matheus Henrique Alves Soares
+8. Pedro Henrique dos Santos de Carvalho
