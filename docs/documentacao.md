@@ -43,4 +43,31 @@ Desenvolvimento do aplicativo para celulares.
 ### Iteligência Artificial
 Análise dos dados e geração de recomendações.
 
+## Integrantes e suas responsabilidades
+
+### Pedro
+Pesquisar a documentação sobre a ADS7.
+
+### Jhonatas
+Pesquisar sobre consumo e desperdicio de energia.
+
+### Cauã
+Definição do problema e público-alvo.
+
+### Matheus
+Definição da solução,iA e funcionabilidades do MVP.
+
+### Guilherme
+Identificações das entidades e classes do sistema.
+
+### Diego
+Criação do diagrama de classes.
+
+### Pamela
+Definição das tecnologia e documentação do projeto.
+
+### Luiz
+Organização do GitHub,Issues e kanban.
+
+
 
