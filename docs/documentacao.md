@@ -19,3 +19,28 @@ O projeto é destinado principalmente a pessoas que vivem em residências e a pe
 ## Solução proposta
 
 A proposta é oferecer um aplicativo que facilite a análise de diferentes possibilidades de geração de energia para cada usuário. Nele, a pessoa poderá informar dados sobre sua residência ou microempresa e indicar o que espera obter com a utilização de uma fonte alternativa. A partir dessas informações, o sistema irá avaliar o cenário apresentado e verificar se a implantação pode ser uma opção viável. A Inteligência Artificial ajudará nessa avaliação, relacionando os dados informados com outras informações necessárias para a análise. Ao final, o usuário poderá receber uma visão mais clara sobre a viabilidade, o investimento e a possível economia, além de recomendações de acordo com seu cenário.
+
+## Tecnologia
+
+### java
+Desenvolvimento do sistema.
+
+### Spring Boot
+Desenvolvimento do back-end.
+
+### Banco de Dados SQL
+Armazenamento dos dados.
+
+### Git
+Controle das versões do projeto.
+
+### GitHub
+Armazenamento e colaboraçaõ no projeto.
+
+### Apicativo Mobile Hibrido
+Desenvolvimento do aplicativo para celulares.
+
+### Iteligência Artificial
+Análise dos dados e geração de recomendações.
+
+
