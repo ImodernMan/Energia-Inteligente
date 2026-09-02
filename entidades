@@ -1,0 +1,11 @@
+Usuário: quem usa o app, faz cadastro/login e informa os dados necessários pra análise ser feita.
+
+• Localização/Imóvel**: guarda informações do imóvel do usuário, como endereço, espaço disponível pra instalação (telhado, por exemplo) e o índice de sol da região, que influencia diretamente na viabilidade.
+
+• Consumo de Energia**: registra o consumo médio informado pelo usuário (em kWh), que serve de base pra calcular quanto ele economizaria.
+
+• Investimento**: representa quanto o usuário pretende investir, usado pra calcular o retorno financeiro e em quanto tempo o investimento se paga.
+
+• Fonte de Energia**: as opções de energia limpa disponíveis (solar, eólica etc.), com informações técnicas como custo, eficiência e vida útil, usadas na comparação.
+
+• Análise de Inteligência Artificial**: processa os dados de consumo, localização e investimento e calcula se a instalação é viável.
