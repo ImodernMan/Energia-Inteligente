@@ -49,13 +49,13 @@ A arquitetura também permitirá futuras expansões, como a utilização de nova
 
 ### C4 Nível 1 — Contexto do Sistema
 
-![Diagrama C4 Nível 1](docs/diagrama-c4-nivel-1.png)
+![Diagrama C4 Nível 1](Energia%20Inteligente%20Sistema-2026-09-16-001915.png)
 
 O diagrama de contexto apresenta uma visão geral do sistema Energia Inteligente, mostrando o usuário residencial ou microempresa como principal usuário da aplicação e a integração do sistema com a API externa de Inteligência Artificial Google Gemini API.
 
 ### C4 Nível 2 — Contêineres
 
-![Diagrama C4 Nível 2](docs/Energia%20Inteligente-2026-09-16-001959.png)
+![Diagrama C4 Nível 2](Energia%20Inteligente-2026-09-16-001959.png)
 
 O diagrama de contêineres detalha os principais componentes do sistema Energia Inteligente: aplicativo mobile desenvolvido com Flutter/Dart, API back-end desenvolvida em Java/Spring Boot e banco de dados SQLite. O back-end realiza a comunicação com a API externa Google Gemini API para análise dos dados e geração de recomendações. A comunicação entre o aplicativo e o back-end ocorre por REST/HTTP utilizando JSON.
 
