@@ -69,25 +69,25 @@ Definição das tecnologia e documentação do projeto.
 ### Luiz
 Organização do GitHub,Issues e kanban.
 
-### Arquitetura
+## Arquitetura
 
-## Flutter e Dart
+### Flutter e Dart
 Serão usados para criar o aplicativo e a interface que o usuário vai utilizar.
 Também serão responsáveis pela parte visual e pela interação do usuário com o aplicativo.
 
-## Java e Spring Boot
+### Java e Spring Boot
 Serão usados no back-end,responsavéis pelas regras e pelo processamento das informações no sistema.
 Também vão permitir que o aplicativo envie os dados para o sistema e receba as informações processadas.
 
-## SQLite
+### SQLite
 Será usado para armazenar os dados do sistema.
 Ele permitirá guardar informações como os dados de consumo e as informações utilizadas pelo aplicativo.
 
-## IA
+### IA
 Será usado para analisar o consumo de energia e gerar recomendações para o usuário.
 A análise de dados ajudará a indentificar possibilidades de economia de energia e sugerir soluções adequadas.
 
-## REST/HTTP + JSON
+### REST/HTTP + JSON
 Serão usados para fazer a comunicação entre o aplicativo e o back-end,enviando e recebendo informações.
 O REST define a forma de comunicação, o HTTP permite essa troca de informaçõs e o JSON organiza os dados enviados
 
