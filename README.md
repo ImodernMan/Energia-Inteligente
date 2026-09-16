@@ -45,27 +45,27 @@ A arquitetura também permitirá futuras expansões, como a utilização de nova
 - Aplicativo mobile híbrido
 - Inteligência Artificial
 
-- ## Arquitetura
+## Arquitetura
 
 ### C4 Nível 1 — Contexto do Sistema
 
 ![Diagrama C4 Nível 1](docs/diagrama-c4-nivel-1.png)
 
-O diagrama de contexto apresenta uma visão geral do sistema Energia Inteligente, mostrando os usuários que interagem com a aplicação e os sistemas externos utilizados, como a API de Inteligência Artificial.
+O diagrama de contexto apresenta uma visão geral do sistema Energia Inteligente, mostrando o usuário residencial ou microempresa como principal usuário da aplicação e a integração do sistema com a API externa de Inteligência Artificial Google Gemini API.
 
 ### C4 Nível 2 — Contêineres
 
 ![Diagrama C4 Nível 2](docs/Energia%20Inteligente-2026-09-16-001959.png)
 
-O diagrama de contêineres detalha os principais componentes do sistema: aplicativo mobile desenvolvido com Flutter/Dart, API back-end desenvolvida em Java/Spring Boot e banco de dados SQLite. A comunicação entre o aplicativo e o back-end ocorre por REST/HTTP utilizando JSON, além da integração com a API externa de Inteligência Artificial.
+O diagrama de contêineres detalha os principais componentes do sistema Energia Inteligente: aplicativo mobile desenvolvido com Flutter/Dart, API back-end desenvolvida em Java/Spring Boot e banco de dados SQLite. O back-end realiza a comunicação com a API externa Google Gemini API para análise dos dados e geração de recomendações. A comunicação entre o aplicativo e o back-end ocorre por REST/HTTP utilizando JSON.
 
 ### Tecnologias e responsabilidades
 
 - **Flutter/Dart:** desenvolvimento do aplicativo mobile e interface do usuário.
-- **Java/Spring Boot:** desenvolvimento do back-end, regras de negócio e processamento das informações.
-- **SQLite:** armazenamento dos dados do sistema.
-- **IA:** análise dos dados e geração de recomendações.
-- **REST/HTTP + JSON:** comunicação entre o aplicativo e o back-end.
+- **Java/Spring Boot:** desenvolvimento do back-end, regras de negócio e integração com a API de Inteligência Artificial.
+- **SQLite:** armazenamento e persistência dos dados do sistema.
+- **Google Gemini API:** análise dos dados e geração de recomendações utilizando Inteligência Artificial.
+- **REST/HTTP + JSON:** comunicação entre o aplicativo mobile e a API back-end.
 
 ### Integrantes
 
