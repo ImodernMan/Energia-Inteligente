@@ -45,6 +45,28 @@ A arquitetura também permitirá futuras expansões, como a utilização de nova
 - Aplicativo mobile híbrido
 - Inteligência Artificial
 
+- ## Arquitetura
+
+### C4 Nível 1 — Contexto do Sistema
+
+![Diagrama C4 Nível 1](docs/diagrama-c4-nivel-1.png)
+
+O diagrama de contexto apresenta uma visão geral do sistema Energia Inteligente, mostrando os usuários que interagem com a aplicação e os sistemas externos utilizados, como a API de Inteligência Artificial.
+
+### C4 Nível 2 — Contêineres
+
+![Diagrama C4 Nível 2](docs/Energia%20Inteligente-2026-09-16-001959.png)
+
+O diagrama de contêineres detalha os principais componentes do sistema: aplicativo mobile desenvolvido com Flutter/Dart, API back-end desenvolvida em Java/Spring Boot e banco de dados SQLite. A comunicação entre o aplicativo e o back-end ocorre por REST/HTTP utilizando JSON, além da integração com a API externa de Inteligência Artificial.
+
+### Tecnologias e responsabilidades
+
+- **Flutter/Dart:** desenvolvimento do aplicativo mobile e interface do usuário.
+- **Java/Spring Boot:** desenvolvimento do back-end, regras de negócio e processamento das informações.
+- **SQLite:** armazenamento dos dados do sistema.
+- **IA:** análise dos dados e geração de recomendações.
+- **REST/HTTP + JSON:** comunicação entre o aplicativo e o back-end.
+
 ### Integrantes
 
 1. Luiz Paulo Fernandes
