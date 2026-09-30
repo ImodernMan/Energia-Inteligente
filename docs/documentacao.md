@@ -1,0 +1,96 @@
+# Energia-Iteligente
+
+## ODS 7 - Energia Limpa e Acessivel
+
+## Objetivo/Ideia do projeto
+
+O projeto Energia-Inteligente tem como objetivo desenvolver um aplicativo móvel híbrido para ajudar residências e microempresas a analisar a viabilidade de utilizar fontes alternativas de energia. A proposta é oferecer ao usuário uma forma simples de entender se a implantação de uma dessas fontes pode ser adequada para o seu cenário. O aplicativo irá considerar as informações fornecidas pelo usuário para realizar essa análise. Dessa forma, será possível ter uma visão melhor sobre as possibilidades de utilização de uma fonte alternativa de energia. O projeto também busca ajudar na tomada de decisões relacionadas ao consumo e à geração de energia. Com isso, a solução pretende facilitar o acesso a informações que podem ser importantes antes de realizar um investimento. A proposta está relacionada à ODS 7 — Energia Limpa e Acessível, contribuindo para o uso de alternativas de energia de forma mais consciente e acessível
+
+
+
+## Problema
+
+Muitas pessoas têm dificuldade para entender qual fonte alternativa de energia pode ser uma boa opção para sua residência ou microempresa. Também pode ser difícil saber se o investimento necessário realmente combina com sua realidade e com a economia que espera obter. Além disso, informações como consumo de energia, espaço disponível e localização podem influenciar nessa decisão. O projeto busca facilitar esse processo, reunindo essas informações para apresentar uma análise mais simples e ajudar o usuário a compreender melhor seu cenário.
+
+## Publico alvo
+
+O projeto é destinado principalmente a pessoas que vivem em residências e a pequenos negócios que desejam conhecer melhor as possibilidades de utilizar fontes alternativas de energia. A ferramenta poderá ajudar esses usuários a analisar se a implantação de uma fonte de energia pode ser adequada para sua realidade. Dessa forma, o usuário poderá fornecer informações sobre seu cenário e receber uma análise que facilite a compreensão das possibilidades e ajude na tomada de decisão.
+
+## Solução proposta
+
+A proposta é oferecer um aplicativo que facilite a análise de diferentes possibilidades de geração de energia para cada usuário. Nele, a pessoa poderá informar dados sobre sua residência ou microempresa e indicar o que espera obter com a utilização de uma fonte alternativa. A partir dessas informações, o sistema irá avaliar o cenário apresentado e verificar se a implantação pode ser uma opção viável. A Inteligência Artificial ajudará nessa avaliação, relacionando os dados informados com outras informações necessárias para a análise. Ao final, o usuário poderá receber uma visão mais clara sobre a viabilidade, o investimento e a possível economia, além de recomendações de acordo com seu cenário.
+
+## Tecnologia
+
+### java
+Desenvolvimento do sistema.
+
+### Spring Boot
+Desenvolvimento do back-end.
+
+### Banco de Dados SQL
+Armazenamento dos dados.
+
+### Git
+Controle das versões do projeto.
+
+### GitHub
+Armazenamento e colaboraçaõ no projeto.
+
+### Apicativo Mobile Hibrido
+Desenvolvimento do aplicativo para celulares.
+
+### Iteligência Artificial
+Análise dos dados e geração de recomendações.
+
+## Integrantes e suas responsabilidades
+
+### Pedro
+Pesquisar a documentação sobre a ADS7.
+
+### Jhonatas
+Pesquisar sobre consumo e desperdicio de energia.
+
+### Cauã
+Definição do problema e público-alvo.
+
+### Matheus
+Definição da solução,iA e funcionabilidades do MVP.
+
+### Guilherme
+Identificações das entidades e classes do sistema.
+
+### Diego
+Criação do diagrama de classes.
+
+### Pamela
+Definição das tecnologia e documentação do projeto.
+
+### Luiz
+Organização do GitHub,Issues e kanban.
+
+## Arquitetura
+
+### Flutter e Dart
+Serão usados para criar o aplicativo e a interface que o usuário vai utilizar.
+Também serão responsáveis pela parte visual e pela interação do usuário com o aplicativo.
+
+### Java e Spring Boot
+Serão usados no back-end,responsavéis pelas regras e pelo processamento das informações no sistema.
+Também vão permitir que o aplicativo envie os dados para o sistema e receba as informações processadas.
+
+### SQLite
+Será usado para armazenar os dados do sistema.
+Ele permitirá guardar informações como os dados de consumo e as informações utilizadas pelo aplicativo.
+
+### IA
+Será usado para analisar o consumo de energia e gerar recomendações para o usuário.
+A análise de dados ajudará a indentificar possibilidades de economia de energia e sugerir soluções adequadas.
+
+### REST/HTTP + JSON
+Serão usados para fazer a comunicação entre o aplicativo e o back-end,enviando e recebendo informações.
+O REST define a forma de comunicação, o HTTP permite essa troca de informaçõs e o JSON organiza os dados enviados
+
+
+
+
