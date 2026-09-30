@@ -1,0 +1,33 @@
+## Funcionalidades Principais do MVP
+
+## Consulta de Viabilidade de Implantação
+
+Esta é a interface de entrada onde o usuário interage com o aplicativo mobile. Coleta e estruturação dos dados essenciais para a simulação energética através da interface mobile:
+
+Consumo médio mensal de energia ou valor médio em R$, localização geográfica CEP ou município, área física disponível para instalação e limite de orçamento/expectativa de economia.
+
+Validação dos dados informados no aplicativo e envio via requisição http/rest para a API Spring Boot, persistindo as informações na entidade Simulação associada ao usuário pelo back end.
+
+## Análise Personalizada do Cenário
+
+Depois que os dados são coletados, essa área irá estruturar o cenário. Processamento técnico e financeiro prévio a partir dos dados cadastrados na simulação:
+
+Cruzamento da localização e área informadas com dados de incidência solar e eólica da região.
+
+Cálculo da capacidade de geração mensal estimada, previsão de economia percentual na conta de luz e estimativa preliminar de investimento x payback.
+
+## Geração de Recomendações via Inteligência Artificial
+
+Invocação do módulo de IA responsável pela interpretação avançada do cenário:
+
+Seria uma das partes principais de nosso aplicativo. A IA analisa a relação entre consumo, área e orçamento que o usuário oferece, para indicar a tecnologia mais adequada.
+
+Proposta de fases de implementação ou adaptação às restrições físicas e financeiras especificadas pelo usuário.
+
+## Apresentação da Justificativa da Análise
+
+O usuário deve obter uma apresentação sobre o porquê da recomendação feita pela IA para tomar uma decisão financeira adequada. Exibição detalhada e transparente do parecer final emitido pela IA:
+
+Apresentação clara dos motivos da classificação.
+
+Métricas de impacto do ODS 7, mostrando a estimativa de emissões de gás carbônico evitadas ao adotar as fontes alternativas recomendadas.
