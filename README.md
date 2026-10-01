@@ -63,8 +63,6 @@ O diagrama de contexto apresenta uma visão geral do sistema Energia Inteligente
 
 O diagrama de contêineres detalha os principais componentes do sistema Energia Inteligente: aplicativo mobile desenvolvido com Flutter/Dart, API back-end desenvolvida em Java/Spring Boot e banco de dados SQLite. O back-end realiza a comunicação com a API externa Google Gemini API para análise dos dados e geração de recomendações. A comunicação entre o aplicativo e o back-end ocorre por REST/HTTP utilizando JSON.
 
-###Diagrama de Banco de Dados / Entidades
-
 ## Diagrama de Banco de Dados / Entidades
 
 ![Diagrama de Banco de Dados](diagrama-banco-dados.png)
