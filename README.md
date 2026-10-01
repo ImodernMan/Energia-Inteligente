@@ -63,6 +63,20 @@ O diagrama de contexto apresenta uma visão geral do sistema Energia Inteligente
 
 O diagrama de contêineres detalha os principais componentes do sistema Energia Inteligente: aplicativo mobile desenvolvido com Flutter/Dart, API back-end desenvolvida em Java/Spring Boot e banco de dados SQLite. O back-end realiza a comunicação com a API externa Google Gemini API para análise dos dados e geração de recomendações. A comunicação entre o aplicativo e o back-end ocorre por REST/HTTP utilizando JSON.
 
+###Diagrama de Banco de Dados / Entidades
+
+## Diagrama de Banco de Dados / Entidades
+
+![Diagrama de Banco de Dados](diagrama-banco-dados.png)
+
+
+O diagrama de banco de dados apresenta as principais entidades utilizadas pelo sistema Energia Inteligente e a forma como elas se relacionam. A entidade Usuário armazena os dados básicos de quem utiliza o sistema, podendo estar relacionada a um ou mais registros de Simulação.
+A entidade Simulação armazena as informações utilizadas para realizar a análise de viabilidade, como tipo de energia, consumo mensal, área disponível, investimento estimado, economia estimada e o status da análise. Cada simulação também pode gerar um Resultado de IA, contendo a classificação de viabilidade, justificativa, recomendações e a data da análise.
+O sistema também possui a entidade Endereço, responsável por armazenar os dados de localização do usuário, como logradouro, número, bairro, cidade, estado e CEP. Esse cadastro é opcional e pode ser utilizado para complementar as informações da simulação.
+A entidade Recomendação representa as orientações geradas a partir da análise realizada pelo sistema. Essas recomendações possuem informações como título, descrição e prioridade, podendo utilizar Critérios de Análise para definir os parâmetros considerados durante a avaliação.
+Por fim, a entidade Fonte de Dados Externa representa informações obtidas de fontes externas, como dados de clima, tarifas e incentivos. Essas informações podem ser utilizadas como apoio para melhorar a análise e gerar recomendações mais adequadas para cada cenário.
+
+
 ### Tecnologias e responsabilidades
 
 - **Flutter/Dart:** desenvolvimento do aplicativo mobile e interface do usuário.
