@@ -35,6 +35,10 @@ A arquitetura também permitirá futuras expansões, como a utilização de nova
 3. Geração de recomendações utilizando Inteligência Artificial;
 4. Apresentação da justificativa da análise realizada pela IA.
 
+### Principais Classes do Sistema
+
+As principais classes do Energia Inteligente organizam o funcionamento do sistema. Usuario e Simulacao armazenam os dados, os Repositories cuidam do banco de dados, os Controllers fazem a comunicação com o aplicativo e o GeminiService integra a Inteligência Artificial para analisar as simulações e gerar recomendações.
+
 ### Tecnologias
 
 - Java
