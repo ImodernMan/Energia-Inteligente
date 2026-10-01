@@ -65,7 +65,7 @@ O diagrama de contêineres detalha os principais componentes do sistema Energia 
 
 ### Diagrama de Banco de Dados / Entidades
 
-![Diagrama de Banco de Dados](a_clean_white_background_diagram_image_with_a_min.png -->)
+![Diagrama do Banco de Dados](diagrama-banco.png)
 
 O diagrama de banco de dados apresenta as principais entidades utilizadas pelo sistema Energia Inteligente e a forma como elas se relacionam. A entidade Usuário armazena os dados básicos de quem utiliza o sistema, podendo estar relacionada a um ou mais registros de Simulação.
 A entidade Simulação armazena as informações utilizadas para realizar a análise de viabilidade, como tipo de energia, consumo mensal, área disponível, investimento estimado, economia estimada e o status da análise. Cada simulação também pode gerar um Resultado de IA, contendo a classificação de viabilidade, justificativa, recomendações e a data da análise.
