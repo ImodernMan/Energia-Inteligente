@@ -17,11 +17,19 @@ public class Simulacao {
     private double investimento;
     private String localizacao;
 
+    // Resposta gerada pela Inteligência Artificial
+    private String analiseIa;
+
     public Simulacao() {
     }
 
-    public Simulacao(Long id, double consumoMensal, double areaDisponivel,
-                     double investimento, String localizacao) {
+    public Simulacao(
+            Long id,
+            double consumoMensal,
+            double areaDisponivel,
+            double investimento,
+            String localizacao) {
+
         this.id = id;
         this.consumoMensal = consumoMensal;
         this.areaDisponivel = areaDisponivel;
@@ -67,5 +75,13 @@ public class Simulacao {
 
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public String getAnaliseIa() {
+        return analiseIa;
+    }
+
+    public void setAnaliseIa(String analiseIa) {
+        this.analiseIa = analiseIa;
     }
 }
