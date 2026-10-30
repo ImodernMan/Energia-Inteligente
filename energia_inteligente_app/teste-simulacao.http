@@ -1,0 +1,10 @@
+
+POST http://localhost:8080/api/simulacoes
+Content-Type: application/json
+
+{
+  "consumoMensal": 500,
+  "areaDisponivel": 60,
+  "investimento": 20000,
+  "localizacao": "Itaquaquecetuba"
+}
