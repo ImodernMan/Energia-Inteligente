@@ -32,3 +32,7 @@ build/
 ### VS Code ###
 .vscode/
 energia-inteligente.db
+# Artefatos temporários dos testes automatizados
+/test-data/
+/tests/backend-test.log
+__pycache__/
