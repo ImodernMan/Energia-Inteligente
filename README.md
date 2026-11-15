@@ -85,10 +85,9 @@ Por fim, a entidade Fonte de Dados Externa representa informações obtidas de f
 ### Integrantes
 
 1. Luiz Paulo Fernandes
-2. Guilherme Alexandre Batista
-3. Pamela Almeida dos Santos
-4. Cauã Silva Rocha
-5. Jhonatas Felipe Lopes Ribeiro
-6. Diego Silva da Costa
-7. Matheus Henrique Alves Soares
-8. Pedro Henrique dos Santos de Carvalho
+2. Pamela Almeida dos Santos
+3. Cauã Silva Rocha
+4. Jhonatas Felipe Lopes Ribeiro
+5. Diego Silva da Costa
+6. Matheus Henrique Alves Soares
+7. Pedro Henrique dos Santos de Carvalho
