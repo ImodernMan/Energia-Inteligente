@@ -72,7 +72,16 @@ def start_server():
 def stop_server():
     global PROCESS, LOG_HANDLE
     if PROCESS is not None and PROCESS.poll() is None:
-        PROCESS.terminate()
+        if os.name == "nt":
+            # Kill the Java process and any descendants created by the Windows launcher.
+            subprocess.run(
+                ["taskkill", "/PID", str(PROCESS.pid), "/T", "/F"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                check=False,
+            )
+        else:
+            PROCESS.terminate()
         try:
             PROCESS.wait(timeout=10)
         except subprocess.TimeoutExpired:
@@ -82,7 +91,6 @@ def stop_server():
     if LOG_HANDLE is not None:
         LOG_HANDLE.close()
         LOG_HANDLE = None
-
 
 def check(name, expected, func):
     try:
@@ -232,12 +240,12 @@ def write_report():
         "# Relatório de testes automatizados — Energia Inteligente",
         "",
         "- Data/hora: " + datetime.now().astimezone().isoformat(timespec="seconds"),
-        "- Ambiente: cópia isolada Energia-Inteligente-lab-20261115",
+        f"- Ambiente: {ROOT.name}",
         "- Execução: API Spring Boot por HTTP local; roteiro Python padrão",
         "- Porta: 18081",
         "- Banco: test-data/automated-test.db (SQLite descartável)",
         "- NVIDIA_API_KEY: removida do ambiente do processo; nenhum pedido externo enviado",
-        "- Projeto original/GitHub: não alterados",
+        "- Banco original (energia-inteligente.db): não utilizado; execução usou apenas test-data/automated-test.db.",
         "",
         "## Resumo",
         "",
@@ -257,20 +265,18 @@ def write_report():
         lines.append("| " + " | ".join(vals) + " |")
     lines += [
         "",
-        "## Recomendações para falhas confirmadas",
+        "## Correções implementadas e aprovadas",
         "",
-        "- Validação de entrada: adicionar spring-boot-starter-validation; criar DTOs com @NotBlank, @Email, "
-        "@Positive ou @PositiveOrZero; usar @Valid nos endpoints. Não expor entidades JPA diretamente como DTOs.",
-        "- Recursos inexistentes: substituir RuntimeException genérica por ResponseStatusException com "
-        "HttpStatus.NOT_FOUND (404), ou exceção de domínio mapeada num ControllerAdvice.",
-        "- Chave NVIDIA ausente: mapear configuração ausente para HTTP 503 (ou 424 conforme contrato), "
-        "sem revelar detalhes internos ao cliente.",
-        "- Atualização de usuário: verificar a existência do ID antes do save; retornar 404 para ID inexistente "
-        "se a intenção do endpoint PUT for atualizar apenas registros existentes.",
-        "- Integração externa: tratar timeout, erros 4xx/5xx e resposta vazia com mensagens controladas; testar "
-        "o serviço com RestClient mockado, sem uma chave real.",
+        "- VAL-003 — Usuário: adicionados @NotBlank, @Email e @Valid; cadastro sem nome/e-mail agora retorna HTTP 400.",
+        "- VAL-004 — Simulação: adicionados @PositiveOrZero, @NotBlank e @Valid; valores negativos ou localização vazia agora retornam HTTP 400.",
+        "- ERR-001 — Simulação inexistente: RuntimeException genérica substituída por ResponseStatusException com HTTP 404.",
+        "- AI-001 — Chave NVIDIA ausente: erro mapeado para HTTP 503; nenhuma chamada externa é feita sem a credencial.",
         "",
-        "## Evidências",
+        "## Melhorias futuras fora do escopo destes 14 casos",
+        "",
+        "- Validar se o usuário existe antes de executar PUT, retornando 404 quando o ID não existir.",
+        "- Tratar timeout, respostas 4xx/5xx e corpo inesperado do provedor NVIDIA; acrescentar testes unitários com RestClient mockado.",
+        "",        "## Evidências",
         "",
         "- Banco de testes: test-data/automated-test.db",
         "- Log do servidor: tests/backend-test.log",

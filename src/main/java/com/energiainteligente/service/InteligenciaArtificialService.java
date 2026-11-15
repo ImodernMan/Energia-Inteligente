@@ -1,8 +1,10 @@
 package com.energiainteligente.service;
 
 import com.energiainteligente.model.Simulacao;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Map;
@@ -19,7 +21,6 @@ public class InteligenciaArtificialService {
     }
 
     public String prepararPrompt(Simulacao simulacao) {
-
         return "Analise brevemente esta simulação de energia residencial. "
                 + "Responda em português, em no máximo 5 linhas, informando "
                 + "se o investimento parece viável e uma justificativa simples. "
@@ -30,11 +31,13 @@ public class InteligenciaArtificialService {
     }
 
     public String analisar(Simulacao simulacao) {
-
         String apiKey = System.getenv("NVIDIA_API_KEY");
 
         if (apiKey == null || apiKey.isBlank()) {
-            throw new RuntimeException("NVIDIA_API_KEY não configurada.");
+            throw new ResponseStatusException(
+                    HttpStatus.SERVICE_UNAVAILABLE,
+                    "Serviço de análise indisponível: configure NVIDIA_API_KEY."
+            );
         }
 
         String prompt = prepararPrompt(simulacao);

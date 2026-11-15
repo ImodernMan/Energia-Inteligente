@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Simulacao {
@@ -12,9 +14,16 @@ public class Simulacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @PositiveOrZero(message = "Consumo mensal não pode ser negativo")
     private double consumoMensal;
+
+    @PositiveOrZero(message = "Área disponível não pode ser negativa")
     private double areaDisponivel;
+
+    @PositiveOrZero(message = "Investimento não pode ser negativo")
     private double investimento;
+
+    @NotBlank(message = "Localização é obrigatória")
     private String localizacao;
 
     // Resposta gerada pela Inteligência Artificial
@@ -29,7 +38,6 @@ public class Simulacao {
             double areaDisponivel,
             double investimento,
             String localizacao) {
-
         this.id = id;
         this.consumoMensal = consumoMensal;
         this.areaDisponivel = areaDisponivel;

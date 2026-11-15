@@ -2,6 +2,7 @@ package com.energiainteligente.controller;
 
 import com.energiainteligente.model.Usuario;
 import com.energiainteligente.repository.UsuarioRepository;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,7 +16,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario salvar(@RequestBody Usuario usuario) {
+    public Usuario salvar(@Valid @RequestBody Usuario usuario) {
         return repository.save(usuario);
     }
 
@@ -25,7 +26,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuario) {
+    public Usuario atualizar(@PathVariable Long id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
         return repository.save(usuario);
     }

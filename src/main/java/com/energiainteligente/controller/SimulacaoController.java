@@ -3,6 +3,9 @@ package com.energiainteligente.controller;
 import com.energiainteligente.model.Simulacao;
 import com.energiainteligente.repository.SimulacaoRepository;
 import com.energiainteligente.service.InteligenciaArtificialService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,13 +18,12 @@ public class SimulacaoController {
     public SimulacaoController(
             SimulacaoRepository repository,
             InteligenciaArtificialService iaService) {
-
         this.repository = repository;
         this.iaService = iaService;
     }
 
     @PostMapping
-    public Simulacao salvar(@RequestBody Simulacao simulacao) {
+    public Simulacao salvar(@Valid @RequestBody Simulacao simulacao) {
         return repository.save(simulacao);
     }
 
@@ -32,9 +34,11 @@ public class SimulacaoController {
 
     @PostMapping("/{id}/analise")
     public String analisar(@PathVariable Long id) {
-
         Simulacao simulacao = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Simulação não encontrada"));
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Simulação não encontrada"
+                ));
 
         String analise = iaService.analisar(simulacao);
 
