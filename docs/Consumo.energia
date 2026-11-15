@@ -1,0 +1,83 @@
+## Pesquisa sobre o consumo de energia:
+
+1. Dados de Consumo Médio (Referências Nacionais)
+Caso o usuário não tenha a conta de luz em mãos durante a simulação, o aplicativo pode sugerir médias pré-configuradas baseadas nos dados da Empresa de Pesquisa Energética (EPE) e do Laboratório de Eficiência Energética em Edificações (LabEEE/UFSC):
+Consumo Residencial Médio. A média nacional gira em torno de 152 a 180 kWh/mês por residência. Esse valor sofre forte variação regional, podendo ultrapassar 260 kWh/mês na região Sul devido ao uso intenso de climatização e aquecimento de água.• Consumo Comercial (Microempresas). Varia drasticamente conforme o ramo de atuação. Pequenos escritórios e consultórios consomem entre 300 e 800 kWh/mês. Comércios com refrigeração contínua (padarias, mercadinhos e açougues) situam-se frequentemente entre 1.500 e 5.000 kWh/mês.
+• Crescimento da Demanda. Segundo a resenha mensal da EPE, as classes residencial e comercial lideram a expansão do consumo elétrico no Brasil, impulsionadas pelo aumento de temperatura e maior adoção de equipamentos eletrônicos.
+
+2. Tarifas de Energia e Regras Regulatórias
+
+Para que o aplicativo calcule com precisão o retorno financeiro (payback) e a viabilidade econômica de um sistema de energia alternativa, o motor de cálculo precisa considerar as normas definidas pela Agência Nacional de Energia Elétrica (ANEEL). No Brasil, as residências (subgrupo B1) e as microempresas de pequeno porte (subgrupo B3) pertencem ao chamado Grupo B de baixa tensão, o que significa que possuem uma tarifa monômia, na qual a cobrança ocorre exclusivamente sobre a quantidade de energia consumida em quilowatts-hora (kWh).
+Mesmo que o usuário instale um sistema capaz de suprir toda a sua demanda energética, a fatura mensal nunca será zerada devido ao custo de disponibilidade. Essa taxa mínima obrigatória garante a remuneração da distribuidora pelo uso da rede e varia conforme o padrão de entrada do imóvel, correspondendo a 30 kWh para conexões monofásicas, 50 kWh para bifásicas e 100 kWh para trifásicas. Além desse valor fixo, o sistema do aplicativo deve incorporar a projeção de reajuste tarifário anual — que apresenta uma estimativa de alta média de 9,4% no ciclo de 2026 — e as bandeiras tarifárias (Verde, Amarela e Vermelha), pois a inflação energética acelera o retorno financeiro do investimento ao longo dos 25 anos de vida útil dos equipamentos.
+Outro ponto regulatório indispensável para o algoritmo é o Marco Legal da Geração Distribuída (Lei 14.300/2022). Por essa regra, a energia excedente gerada e injetada na rede elétrica não é mais compensada integralmente, sofrendo a cobrança gradual da Tarifa de Uso do Sistema de Distribuição (TUSD Fio B) sobre os créditos utilizados. Somado a isso, o sistema deve manter-se flexível para futuras atualizações regulatórias, como a implementação da tarifa horária em baixa tensão em discussão pela ANEEL, que poderá alterar o valor da energia conforme o horário do dia e impactar diretamente a estratégia de consumo e geração dos usuários.
+
+
+3. Fatores que Influenciam o Consumo e a Geração
+
+Para que a Inteligência Artificial do seu aplicativo faça recomendações precisas, o formulário de entrada deve capturar variáveis internas e externas:
+• Fatores Climáticos e Geográficos. A irradiação solar média diária (kWh/m² • dia) varia conforme o CEP/estado. Temperaturas ambientes muito elevadas também reduzem levemente a eficiência dos painéis solares.
+• Perfil de Uso (Simultaneidade). Residências geralmente consomem mais à noite (horário de ponta), injetando energia na rede durante o dia. Microempresas consomem majoritariamente em horário comercial, aproveitando a geração instantânea sem depender tanto dos créditos da rede.
+• Características Físicas do Imóvel. Área disponível no telhado (m²), tipo de telha (cerâmica, metálica, fibrocimento ou laje), orientação geográfica (idealmente voltada para o Norte no Brasil) e existência de sombreamento por prédios ou árvores.
+• Equipamentos de Alto Consumo. Aparelhos com resistência elétrica (chuveiro elétrico, ferro de passar) e motores de climatização (ar-condicionado, freezers) representam a maior fatia da conta.
+
+
+4. Fórmulas Base para o Motor de Cálculo e Fontes Alternativas.
+
+Para que o motor de cálculo do aplicativo entregue estimativas realistas de dimensionamento, o algoritmo deve partir da demanda energética líquida do imóvel. Esse valor é obtido subtraindo o custo de disponibilidade (taxa mínima obrigatória da distribuidora) do consumo médio mensal informado na fatura e dividindo o resultado por trinta dias, o que estabelece a meta de geração diária em quilowatts-hora (kWh). A partir dessa necessidade diária, o sistema aplica equações específicas conforme a fonte renovável mais adequada ao perfil geográfico e estrutural do usuário.
+No cenário mais comum para residências urbanas e microempresas comerciais, que é a energia solar fotovoltaica, a potência pico necessária do sistema (em kWp) é calculada dividindo o consumo médio diário pelo produto entre as Horas de Sol Pleno (HSP) da região e a taxa de desempenho do sistema, geralmente fixada entre 0,75 e 0,80 para compensar perdas térmicas e elétricas. Com a potência total definida, o algoritmo divide esse valor pela potência nominal de um módulo comercial (em Watts) e arredonda o resultado para cima, determinando a quantidade exata de painéis e a área mínima de telhado exigida para a instalação.
+Quando o aplicativo identificar imóveis situados em regiões com alto potencial de ventos constantes, como áreas litorâneas ou zonas rurais abertas, o sistema pode simular a microgeração eólica. Nesse caso, o cálculo baseia-se na equação da potência cinética do vento, na qual a potência gerada é proporcional à metade da densidade do ar multiplicada pela área de varredura das pás da turbina, pelo cubo da velocidade média do vento local e pelo coeficiente de eficiência do aerogerador (limitado fisicamente pelo limite de Betz e rendimentos mecânicos). Como a velocidade do vento é elevada ao cubo, o algoritmo alerta o usuário de que pequenas variações no regime de ventos alteram drasticamente a viabilidade do projeto.
+Para microempresas do setor alimentício, propriedades rurais ou residências com alta produção de resíduos orgânicos, o motor de cálculo pode avaliar a geração por biogás (biomassa). A estimativa de energia elétrica gerada parte da multiplicação da massa diária de resíduos orgânicos disponíveis pelo potencial específico de produção de metano daquele material e pelo seu poder calorífico inferior. O resultado térmico obtido é então multiplicado pela eficiência de conversão do motogerador a biogás (geralmente entre 25% e 35%), revelando quantos quilowatts-hora podem ser abatidos da fatura mensal.
+Por fim, em imóveis rurais ou microempresas próximas a cursos d'água com desnível natural, o sistema contempla a microgeração hidráulica. A potência elétrica disponível nesse modelo é calculada multiplicando a densidade da água, a aceleração da gravidade, a vazão do curso d'água (em metros cúbicos por segundo), a altura útil de queda (em metros) e a eficiência global do conjunto turbina-gerador. Independentemente da fonte escolhida pela lógica de recomendação, o aplicativo finaliza a análise econômica aplicando a equação do payback simples, que divide o investimento inicial estimado pela economia anual líquida projetada, considerando as regras de compensação da rede e o reajuste tarifário vigente.
+
+5. Sugestões de APIs e Dados Externos para Integração no App
+Para enriquecer a arquitetura de software do projeto de ADS, vocês podem conectar o aplicativo a bases públicas e APIs:
+• Dados de Irradiação Solar. Utilizar a base do CRESESB (Centro de Referência para Energia Solar e Eólica) ou a API gratuita NASA POWER, que retorna a irradiação solar histórica exata a partir da latitude e longitude do usuário.
+• Papel da Inteligência Artificial (LLM). Além dos cálculos matemáticos determinísticos, a IA pode atuar na análise qualitativa: interpretar se o telhado informado comporta a potência necessária, sugerir medidas de eficiência energética caso o orçamento do usuário seja menor que o investimento ideal, e gerar um relatório em linguagem simples explicando os riscos e benefícios.
+
+-----------------------------------------------------------------------------------------
+
+## Outra pesquisa sobre o consumo de energia:
+
+Abaixo estão os dados levantados a partir de estudos da Empresa de Pesquisa Energética (EPE), do Programa Nacional de Conservação de Energia Elétrica (Procel) e do Laboratório de Eficiência Energética em Edificações (LabEEE/UFSC).
+
+1. Perfil e Hábitos de Consumo Residencial
+O consumo dentro das residências brasileiras é altamente concentrado em horários específicos e fortemente influenciado pela desigualdade socioeconômica e pelo clima regional:
+
+Concentração no Horário de Ponta. O pico de demanda residencial ocorre entre 18h e 21h, período em que os moradores retornam do trabalho ou escola e acionam simultaneamente chuveiros elétricos, iluminação, televisores e eletrodomésticos.
+
+Principais Vilões da Fatura. Segundo levantamentos do setor elétrico, os equipamentos responsáveis pela maior parcela do gasto mensal são o chuveiro elétrico (alta potência em curto tempo), a geladeira e o freezer (uso contínuo por 24 horas) e o ar-condicionado (uso prolongado em regiões quentes).
+
+Disparidade Regional e Climática. Enquanto a média nacional gira em torno de 152,2 kWh/mês, residências na região Sul ultrapassam 260 kWh/mês devido ao uso intenso de aquecimento e climatização, ao passo que a região Norte registra médias abaixo de 100 kWh/mês.
+
+Impacto do Trabalho Remoto e Eletrificação. A popularização do home office e o aumento de dispositivos eletrônicos conectados elevaram o consumo diurno nas residências, fazendo da classe residencial um dos principais motores de crescimento da demanda elétrica no país.
+
+Empresa de Pesquisa Energética - EPE
+2. Principais Fontes de Desperdício de Energia
+Grande parte do gasto excedente nas residências não vem da falta de tecnologia, mas de hábitos inadequados e falhas na infraestrutura doméstica:
+Uso Ineficiente de Térmicos e Refrigeração. Banhos demorados com o chuveiro na posição "inverno", abrir a porta da geladeira com frequência ou guardar alimentos quentes forçam o motor a trabalhar no máximo. No ar-condicionado, o ajuste de temperaturas muito baixas (abaixo de 23°C) e a falta de limpeza nos filtros elevam drasticamente o gasto.
+Consumo Fantasma (Stand-by). Aparelhos eletrônicos como televisores, decodificadores de TV, micro-ondas e carregadores deixados na tomada continuam consumindo energia mesmo desligados, podendo representar até 12% da fatura mensal em casas com muitos equipamentos.
+Fuga de Corrente e Instalações Antigas. Fiações elétricas subdimensionadas, emendas mal feitas, disjuntores defeituosos e eletrodomésticos antigos com borrachas de vedação ressecadas geram perda de energia na forma de calor e consumo contínuo sem entrega de utilidade.
+Iluminação Obsoleta e Baixo Aproveitamento Natural. Manter lâmpadas incandescentes ou fluorescentes antigas em vez de modelos LED, além de acender luzes durante o dia em cômodos com janelas bloqueadas por cortinas pesadas, gera desperdício recorrente.
+
+3. Dificuldades Enfrentadas pelos Usuários
+Ao tentar reduzir a conta de luz ou avaliar a transição para fontes limpas, o consumidor residencial esbarra em barreiras práticas e financeiras que justificam a existência do seu aplicativo:
+Falta de Visibilidade e Compreensão da Fatura. A conta de energia apresenta termos técnicos complexos (TUSD, TE, bandeiras tarifárias, tributos estaduais) e não discrimina quanto cada aparelho gasta. O usuário só percebe o excesso quando a fatura chega no fim do mês.
+Confusão entre Potência e Consumo. Muitos consumidores não compreendem que um aparelho de alta potência usado por poucos minutos pode gastar menos do que um equipamento de média potência ligado por várias horas seguidas.
+Barreira Financeira Inicial (CAPEX). Eletrodomésticos eficientes (com Selo Procel A) e sistemas de geração própria (como painéis solares) exigem um investimento inicial elevado, afastando famílias de baixa e média renda que não têm acesso fácil a linhas de crédito verde.
+Desconhecimento Técnico e Receio de Golpes. Usuários residenciais têm dificuldade para dimensionar soluções alternativas por conta própria, não sabem avaliar se o telhado ou a rede elétrica do imóvel suportam a instalação e sentem insegurança diante de orçamentos comerciais muito discrepantes.
+Como aplicar esses dados no seu App (ADS)
+Essas informações permitem que a Inteligência Artificial do aplicativo atue em duas frentes antes mesmo de recomendar a instalação de energia solar:
+Triagem de Eficiência Energética: Se o usuário relatar um consumo muito acima da média para o número de moradores da casa, a IA pode alertar sobre possíveis desperdícios (chuveiro, ar-condicionado ou fuga elétrica) e sugerir medidas de redução de custo zero.
+Educação do Usuário: O aplicativo pode traduzir os dados técnicos da conta de luz e mostrar, de forma visual, como a mudança de hábitos aliada à geração limpa reduz o tempo de retorno (payback) do investimento.
+
+## Sites utilizados e as páginas:
+
+https://brasilescola.uol.com.br/fisica/dicas-para-economia-energia-eletrica.htm
+
+https://www.epe.gov.br/pt/imprensa/noticias/resenha-mensal-consumo-nacional-de-eletricidade-cresce-pelo-sexto-mes-consecutivo-todas-as-classes-consomem-mais-comercial-e-residencial-se-destacam
+
+https://labeee.ufsc.br/pt-br/node/480
+
+https://cidadeverde.com/energiaativa/122189/os-viloes-do-consumo-residencial-de-energia
+
+https://www.gov.br/mme/pt-br/assuntos/noticias/copy_of_Cartilhadoconsumidordeenergiaconsciente.pdf
