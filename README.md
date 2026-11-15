@@ -78,8 +78,8 @@ Por fim, a entidade Fonte de Dados Externa representa informações obtidas de f
 
 - **Flutter/Dart:** desenvolvimento do aplicativo mobile e interface do usuário.
 - **Java/Spring Boot:** desenvolvimento do back-end, regras de negócio e integração com a API de Inteligência Artificial.
-- **SQLite:** armazenamento e persistência dos dados do sistema.
-- **Google Gemini API:** análise dos dados e geração de recomendações utilizando Inteligência Artificial.
+- **PostgreSQL / Supabase:** armazenamento e persistência dos dados do sistema da nuvem.
+- **Inteligência Artificial:** Em fase de desenvolvimento para ánalise dos dados e geração de recomendações].
 - **REST/HTTP + JSON:** comunicação entre o aplicativo mobile e a API back-end.
 
 ### Integrantes
@@ -91,3 +91,20 @@ Por fim, a entidade Fonte de Dados Externa representa informações obtidas de f
 5. Diego Silva da Costa
 6. Matheus Henrique Alves Soares
 7. Pedro Henrique dos Santos de Carvalho
+
+
+
+##  Hospedagem e Acesso
+
+- *API:* hospedada no Render — disponível em: https://integrate.api.nvidia.com/v1
+- *Banco de Dados:* PostgreSQL, hospedado no Supabase
+
+## 📖 Resumo do Projeto
+
+O Energia Inteligente é uma solução voltada para residências e pequenas empresas, que busca tornar a energia limpa mais acessível. Por meio de uma interface simples, o usuário pode informar seu consumo, localização, área disponível e valor disponível para investimento, recebendo uma avaliação organizada e clara sobre possíveis economias e viabilidade.
+
+O sistema funciona em três etapas principais: coleta de dados pelo aplicativo Flutter, processamento das informações pela API em Java/Spring Boot e armazenamento seguro no banco de dados na nuvem. A integração com Inteligência Artificial está prevista como próxima etapa de desenvolvimento.
+
+## Apresentação
+
+Link do vídeo de demonstração: (A ser adicionado posteriormente)
