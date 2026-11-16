@@ -1,88 +1,139 @@
-# Energia-Inteligente
+# Energia Inteligente
 
 ## ODS 7 — Energia Limpa e Acessível
 
-### Sobre o projeto
+O **Energia Inteligente** é um projeto acadêmico voltado a facilitar a avaliação de alternativas de geração de energia limpa para residências e microempresas. A proposta está alinhada ao **Objetivo de Desenvolvimento Sustentável 7 (ODS 7)**, que busca ampliar o acesso à energia limpa, confiável e sustentável.
 
-Nosso projeto tem como objetivo desenvolver um aplicativo mobile híbrido voltado para a análise da viabilidade de implantação de fontes alternativas de energia em residências e microempresas, contribuindo para o ODS 7 — Energia Limpa e Acessível.
+## Sobre o projeto
 
-### Problema
+O sistema busca ajudar o usuário a avaliar a viabilidade de uma alternativa energética a partir de informações como:
 
-Muitas residências e microempresas não possuem uma ferramenta acessível que permita analisar a viabilidade da implantação de uma fonte alternativa de geração de energia, considerando fatores como consumo, localização, área disponível, investimento e expectativas de economia.
+- Consumo mensal de energia;
+- Área disponível para instalação;
+- Valor disponível para investimento;
+- Localização.
 
-### Público-alvo
+Com esses dados, o back-end recebe e armazena as simulações e pode realizar cálculos de viabilidade, apresentando estimativas que apoiem a tomada de decisão.
 
-Usuários residenciais e microempresariais que desejam simular e analisar a viabilidade da implantação de uma fonte alternativa de geração de energia.
+## Problema
 
-### Solução proposta
+Muitas residências e microempresas não possuem uma ferramenta acessível para organizar informações e avaliar se a implantação de uma fonte alternativa de energia pode ser viável para sua realidade.
 
-O sistema será um aplicativo mobile híbrido que permitirá ao usuário informar dados e expectativas relacionadas à implantação de uma fonte alternativa de energia. Essas informações serão utilizadas pelo sistema para realizar uma análise personalizada, com o auxílio de Inteligência Artificial, considerando os dados fornecidos pelo usuário e informações externas relevantes.
+## Público-alvo
 
-A solução terá como objetivo apresentar uma análise de viabilidade, estimativas e recomendações personalizadas para cada cenário.
+Usuários residenciais e microempresariais interessados em conhecer alternativas de energia limpa e avaliar cenários de investimento.
 
-### Inteligência Artificial
+## Funcionalidades implementadas
 
-A Inteligência Artificial será um dos componentes centrais do sistema. A partir dos dados fornecidos pelo usuário e de informações complementares obtidas pelo sistema, a IA realizará uma análise personalizada de cada cenário.
+- Cadastro de simulações com dados de consumo, área disponível, investimento e localização;
+- Consulta das simulações cadastradas;
+- Persistência dos dados em banco PostgreSQL na nuvem;
+- Serviço de cálculo de viabilidade, com estimativas de economia e prazo de retorno do investimento;
+- Aplicativo Flutter em desenvolvimento para consumir a API back-end.
 
-A IA será responsável por interpretar as informações disponíveis, gerar uma classificação de viabilidade, apresentar uma justificativa para a análise e produzir recomendações para o usuário.
+> **Inteligência Artificial:** a integração com IA e a geração automatizada de recomendações fazem parte da evolução planejada do projeto. A disponibilidade dessa funcionalidade deve ser confirmada conforme a conclusão e integração do respectivo módulo.
 
-A arquitetura também permitirá futuras expansões, como a utilização de novas fontes de dados, diferentes tipos de energia e novos critérios de análise.
+## Arquitetura e tecnologias
 
-### Funcionalidades do MVP
+O projeto está organizado em três partes principais:
 
-1. Consulta de viabilidade de implantação;
-2. Análise personalizada do cenário informado;
-3. Geração de recomendações utilizando Inteligência Artificial;
-4. Apresentação da justificativa da análise realizada pela IA.
+1. **Aplicativo:** interface mobile desenvolvida com Flutter/Dart.
+2. **Back-end:** API REST desenvolvida em Java com Spring Boot, responsável pelas regras de negócio e comunicação com o banco de dados.
+3. **Banco de dados:** PostgreSQL hospedado no Supabase.
 
-### Principais Classes do Sistema
-
-As principais classes do Energia Inteligente organizam o funcionamento do sistema. Usuario e Simulacao armazenam os dados, os Repositories cuidam do banco de dados, os Controllers fazem a comunicação com o aplicativo e o GeminiService integra a Inteligência Artificial para analisar as simulações e gerar recomendações.
+A comunicação entre o aplicativo e a API utiliza HTTP/REST e JSON.
 
 ### Tecnologias
 
-- Java
-- Spring Boot
-- Banco de dados SQL
-- Git
-- GitHub
-- Aplicativo mobile híbrido
-- Inteligência Artificial
+| Tecnologia | Utilização |
+|---|---|
+| Java 17 | Linguagem do back-end |
+| Spring Boot | Construção da API REST |
+| Spring Data JPA | Persistência e acesso aos dados |
+| PostgreSQL | Banco de dados relacional |
+| Supabase | Hospedagem do banco de dados |
+| Render | Hospedagem da API back-end |
+| Flutter/Dart | Desenvolvimento do aplicativo |
+| Git e GitHub | Versionamento e colaboração |
 
-## Arquitetura
+## API back-end
 
-### C4 Nível 1 — Contexto do Sistema
+A API está hospedada no Render:
+
+- **Endereço base:** https://energia-inteligente.onrender.com
+- **Listar simulações:** GET https://energia-inteligente.onrender.com/api/simulacoes
+- **Cadastrar simulação:** POST https://energia-inteligente.onrender.com/api/simulacoes
+
+### Exemplo de cadastro
+
+Envie uma requisição POST para `/api/simulacoes`, com o corpo JSON:
+
+```json
+{
+  "consumoMensal": 350,
+  "areaDisponivel": 40,
+  "investimento": 20000,
+  "localizacao": "Itaquaquecetuba-SP"
+}
+```
+
+Os valores são apenas ilustrativos. A API utiliza as variáveis de ambiente `DB_URL`, `DB_USERNAME` e `DB_PASSWORD` para configurar a conexão com o PostgreSQL. Não armazene credenciais no repositório.
+
+**Observação:** instâncias gratuitas do Render podem entrar em inatividade e levar alguns instantes para responder à primeira requisição após um período sem uso.
+
+## Banco de dados
+
+O banco utilizado no ambiente em nuvem é **PostgreSQL**, hospedado no **Supabase**. A aplicação Spring Boot acessa o banco por meio do Spring Data JPA e das configurações fornecidas por variáveis de ambiente.
+
+## Arquitetura C4
+
+### C4 Nível 1 — Contexto do sistema
 
 ![Diagrama C4 Nível 1](Energia%20Inteligente%20Sistema-2026-09-16-001915.png)
 
-O diagrama de contexto apresenta uma visão geral do sistema Energia Inteligente, mostrando o usuário residencial ou microempresa como principal usuário da aplicação e a integração do sistema com a API externa de Inteligência Artificial Google Gemini API.
+O diagrama apresenta o sistema e seus usuários externos. A representação da integração com Inteligência Artificial deve ser revisada para refletir o provedor e o estado atual do módulo.
 
 ### C4 Nível 2 — Contêineres
 
 ![Diagrama C4 Nível 2](Energia%20Inteligente-2026-09-16-001959.png)
 
-O diagrama de contêineres detalha os principais componentes do sistema Energia Inteligente: aplicativo mobile desenvolvido com Flutter/Dart, API back-end desenvolvida em Java/Spring Boot e banco de dados SQLite. O back-end realiza a comunicação com a API externa Google Gemini API para análise dos dados e geração de recomendações. A comunicação entre o aplicativo e o back-end ocorre por REST/HTTP utilizando JSON.
+O diagrama apresenta os principais contêineres da solução. **Atenção:** a versão atual da arquitetura utiliza Flutter/Dart no aplicativo, Java/Spring Boot na API e PostgreSQL no Supabase; referências antigas a SQLite ou a provedores anteriores de IA precisam ser atualizadas no diagrama.
 
-## Diagrama de Banco de Dados / Entidades
+## Modelo de dados
 
 ![Diagrama de Banco de Dados](https://github.com/user-attachments/assets/4ac6f4a1-176d-4ddf-a32e-f9f9774e1ae0)
 
-O diagrama de banco de dados apresenta as principais entidades utilizadas pelo sistema Energia Inteligente e a forma como elas se relacionam. A entidade Usuário armazena os dados básicos de quem utiliza o sistema, podendo estar relacionada a um ou mais registros de Simulação.
-A entidade Simulação armazena as informações utilizadas para realizar a análise de viabilidade, como tipo de energia, consumo mensal, área disponível, investimento estimado, economia estimada e o status da análise. Cada simulação também pode gerar um Resultado de IA, contendo a classificação de viabilidade, justificativa, recomendações e a data da análise.
-O sistema também possui a entidade Endereço, responsável por armazenar os dados de localização do usuário, como logradouro, número, bairro, cidade, estado e CEP. Esse cadastro é opcional e pode ser utilizado para complementar as informações da simulação.
-A entidade Recomendação representa as orientações geradas a partir da análise realizada pelo sistema. Essas recomendações possuem informações como título, descrição e prioridade, podendo utilizar Critérios de Análise para definir os parâmetros considerados durante a avaliação.
-Por fim, a entidade Fonte de Dados Externa representa informações obtidas de fontes externas, como dados de clima, tarifas e incentivos. Essas informações podem ser utilizadas como apoio para melhorar a análise e gerar recomendações mais adequadas para cada cenário.
+O modelo conceitual apresenta entidades relacionadas a usuários, simulações, resultados de análise, endereços, recomendações, critérios de análise e fontes externas de dados. A implementação deve ser consultada no código do back-end para identificar quais entidades já estão efetivamente disponíveis.
 
+## Como executar o back-end localmente
 
-### Tecnologias e responsabilidades
+Pré-requisitos:
 
-- **Flutter/Dart:** desenvolvimento do aplicativo mobile e interface do usuário.
-- **Java/Spring Boot:** desenvolvimento do back-end, regras de negócio e integração com a API de Inteligência Artificial.
-- **PostgreSQL / Supabase:** armazenamento e persistência dos dados do sistema da nuvem.
-- **Inteligência Artificial:** Em fase de desenvolvimento para ánalise dos dados e geração de recomendações].
-- **REST/HTTP + JSON:** comunicação entre o aplicativo mobile e a API back-end.
+- JDK 17 ou compatível;
+- Maven (ou o Maven Wrapper incluído no projeto);
+- Acesso a uma instância PostgreSQL.
 
-### Integrantes
+Configure as variáveis de ambiente necessárias antes de iniciar a aplicação:
+
+- `DB_URL`: URL JDBC de conexão com o PostgreSQL;
+- `DB_USERNAME`: usuário do banco;
+- `DB_PASSWORD`: senha do banco.
+
+Na pasta do back-end, execute:
+
+```bash
+./mvnw spring-boot:run
+```
+
+No Windows PowerShell:
+
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+Por padrão, a aplicação utiliza a porta 8080, salvo configuração diferente pela variável `PORT`.
+
+## Integrantes
 
 1. Luiz Paulo Fernandes
 2. Pamela Almeida dos Santos
@@ -92,19 +143,6 @@ Por fim, a entidade Fonte de Dados Externa representa informações obtidas de f
 6. Matheus Henrique Alves Soares
 7. Pedro Henrique dos Santos de Carvalho
 
-
-
-##  Hospedagem e Acesso
-
-- *API:* hospedada no Render — disponível em: https://integrate.api.nvidia.com/v1
-- *Banco de Dados:* PostgreSQL, hospedado no Supabase
-
-## 📖 Resumo do Projeto
-
-O Energia Inteligente é uma solução voltada para residências e pequenas empresas, que busca tornar a energia limpa mais acessível. Por meio de uma interface simples, o usuário pode informar seu consumo, localização, área disponível e valor disponível para investimento, recebendo uma avaliação organizada e clara sobre possíveis economias e viabilidade.
-
-O sistema funciona em três etapas principais: coleta de dados pelo aplicativo Flutter, processamento das informações pela API em Java/Spring Boot e armazenamento seguro no banco de dados na nuvem. A integração com Inteligência Artificial está prevista como próxima etapa de desenvolvimento.
-
 ## Apresentação
 
-Link do vídeo de demonstração: (A ser adicionado posteriormente)
+**Vídeo de demonstração:** link a ser adicionado pelo grupo.
