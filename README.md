@@ -133,6 +133,17 @@ No Windows PowerShell:
 
 Por padrão, a aplicação utiliza a porta 8080, salvo configuração diferente pela variável `PORT`.
 
+## Apresentação Final
+
+Pitch Deck:https://canva.link/wtub2ektsjmz5ky
+
+Apresentação final do Projeto Integrador.
+
+Vídeo de apresentação e demonstração:
+https://drive.google.com/file/d/1ZS5kAb5_YpI7dU6rVSmy_pLoQxwS9YdS/view?usp=drivesdk
+
+Nesta apresentação são abordados o problema identificado com base no ODS 7, as decisões técnicas, a arquitetura utilizada, as tecnologias escolhidas, a demonstração do MVP, os desafios enfrentados durante o desenvolvimento e as possibilidades de evolução do projeto.
+
 ## Integrantes
 
 1. Luiz Paulo Fernandes
