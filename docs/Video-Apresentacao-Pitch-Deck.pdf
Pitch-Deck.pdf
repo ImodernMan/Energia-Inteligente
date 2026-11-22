@@ -1,0 +1,15 @@
+Energia-Inteligente/
+│
+├── README.md
+│   ├── Vídeo de apresentação:
+│   │   └── https://drive.google.com/file/d/1ZS5kAb5_YpI7dU6rVSmy_pLoQxwS9YdS/view?usp=drivesdk
+│   │
+│   └── Pitch Deck:
+│       └──   https://canva.link/wtub2ektsjmz5ky
+│
+├── docs/
+│   └── Video-Apresentacao-Pitch-Deck.pdf
+│
+├── energia_inteligente_app/
+├── src/
+└── ...
