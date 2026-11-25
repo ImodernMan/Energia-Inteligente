@@ -17,7 +17,8 @@ Com esses dados, o back-end recebe e armazena as simulações e pode realizar c�
 
 ## Problema
 
-Muitas residências e microempresas não possuem uma ferramenta acessível para organizar informações e avaliar se a implantação de uma fonte alternativa de energia pode ser viável para sua realidade.
+Muitas residências e microempresas não possuem uma ferramenta acessível para organizar informações e avaliar se a implantação de uma 
+fonte alternativa de energia pode ser viável para sua realidade
 
 ## Público-alvo
 
@@ -157,3 +158,7 @@ Nesta apresentação são abordados o problema identificado com base no ODS 7, a
 ## Apresentação
 
 **Vídeo de demonstração:** link a ser adicionado pelo grupo.
+
+## 🎬 Vídeo da Apresentação
+
+[Clique aqui para assistir ao vídeo completo](https://drive.google.com/file/d/1JR20FokNCJOMUhh_bHuURM3czFuxvB/view?usp=sharing)
