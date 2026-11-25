@@ -161,4 +161,4 @@ Nesta apresentação são abordados o problema identificado com base no ODS 7, a
 
 ## 🎬 Vídeo da Apresentação
 
-[Clique aqui para assistir ao vídeo completo](https://drive.google.com/file/d/1JR20FokNCJOMUhh_bHuURM3czFuxvB/view?usp=sharing)
+[Clique aqui para assistir ao vídeo completo](https://drive.google.com/file/d/1JR2OfokNCJOMUhh_bHuURW3NczFuwXvB/view?usp=drive_link)
