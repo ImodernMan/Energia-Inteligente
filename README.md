@@ -134,6 +134,11 @@ No Windows PowerShell:
 
 Por padrão, a aplicação utiliza a porta 8080, salvo configuração diferente pela variável `PORT`.
 
+## Video da apresentação
+
+[Clique aqui para assistir ao vídeo completo](https://drive.google.com/file/d/1JR2OfokNCJOMUhh_bHuURW3NczFuwXvB/view?usp=drive_link)
+
+
 ## Apresentação Final
 
 Pitch Deck:https://canva.link/wtub2ektsjmz5ky
@@ -159,6 +164,4 @@ Nesta apresentação são abordados o problema identificado com base no ODS 7, a
 
 **Vídeo de demonstração:** link a ser adicionado pelo grupo.
 
-## 🎬 Vídeo da Apresentação
 
-[Clique aqui para assistir ao vídeo completo](https://drive.google.com/file/d/1JR2OfokNCJOMUhh_bHuURW3NczFuwXvB/view?usp=drive_link)
